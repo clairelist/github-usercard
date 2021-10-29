@@ -46,7 +46,7 @@ const followersArray = [];
       <img src={image url of user} />
       <div class="card-info">
         <h3 class="name">{users name}</h3>
-        <p class="username">{users user name}</p>
+        <p class="username">{users user name}</p> login
         <p>Location: {users location}</p>
         <p>Profile:
           <a href={address to users github page}>{address to users github page}</a>
@@ -57,7 +57,61 @@ const followersArray = [];
       </div>
     </div>
 */
+const entry = document.querySelector('.cards'); //we will append to this
 
+  function userCardMaker({avatar_url, name, login, location, html_url, followers, following, bio}){
+//create elements
+const cardClass = document.createElement('div');
+cardClass.classList.add('card');
+//append me to entry, above
+
+const image = document.createElement('img');
+//insert content
+image.setAttribute('src',avatar_url);
+//append me to cardClass
+cardClass.appendChild(image);
+
+const cardInfo = document.createElement('div');
+cardInfo.classList.add('card-info');
+//append me to cardClass; append all below to ME
+cardClass.appendChild(cardInfo);
+
+const head3 = document.createElement('h3');
+head3.classList.add('name'); //name actual
+head3.textContent = name;
+cardInfo.appendChild(head3);
+
+const userNsel = document.createElement('p');
+userNsel.classList.add('username'); //login
+userNsel.textContent = login;
+cardInfo.appendChild(userNsel);
+
+const locPara = document.createElement('p');
+locPara.textContent = location;
+cardInfo.appendChild(locPara);
+
+const profPara = document.createElement('p');
+profPara.textContent = 'Profile:';
+cardInfor.appendChild(profPara);
+
+const profLink = document.createElement('a');
+profLink.setAttribute('href',html_url);
+profLink.textContent = html_url;
+profPara.appendChild(profLink);
+
+const flersPara = document.createElement('p'); //followers para
+
+const flingPara = document.createElement('p'); //following para
+
+const bioPara = document.createElement('p'); //bio paragraph
+
+//insert content of elements
+
+
+//append to cardClass
+
+//return .card selector
+  }
 /*
   List of LS Instructors Github username's:
     tetondan
